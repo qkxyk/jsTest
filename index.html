@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端学习</title>
+</head>
+<body>
+    <script src="./lib/jquery.js"></script>
+    <script src="https://unpkg.com/mockjs"></script>
+    <script>
+  /*       //第一种模拟方式，通过json文件进行模拟
+        //请求后端接口，这里模拟假数据，json文件只读，不能修改
+        $.get("./data/user.json",function(res){
+            console.log(res)
+        }); */
+    /*     //第二种方式
+        //第三库：mock.js,json-server
+        //http://mockjs.com/
+        //1.引入mockjs
+        //拦截请求，返回mock数据
+        Mock.mock('/users','get',{
+            hello:'mock.js'
+        })
+        $.get("/users",function(res){
+            console.log(res);
+        }) */
+        //使用json-server   https://github.com/typicode/json-server
+        //1、安装json-server  npm install -g json-server
+        //2、添加json文件 如：data中的data.json
+        //3、在data.json文件的目录中，运行 json-server --watch data.json 即可生成api接口
+        $.get(" http://localhost:3000/posts",function(res){
+            console.log(res);
+        })
+    </script>
+</body>
+</html>
